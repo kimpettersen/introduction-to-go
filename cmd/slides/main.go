@@ -15,9 +15,6 @@ func main() {
 Go Meetup
 https://www.meetup.com/Go-Oslo-User-Group/
 
-Women Who Go
-https://www.meetup.com/Women-Who-Go-Oslo/
-
 Golang Slack Group
 Join #norway
 https://invite.slack.golangbridge.org/
