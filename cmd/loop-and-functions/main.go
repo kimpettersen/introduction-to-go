@@ -3,11 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	for i := 0; i < 2; i++ {
-		meow()
+	cats := []string{"Muscat", "Tom", "Mons", ""}
+	for _, catName := range cats {
+		meow(catName)
 	}
 }
 
-func meow() {
-	fmt.Println("Meow!!")
+func meow(catName string) {
+	fmt.Printf("%s: Meow!!\n", catName)
 }

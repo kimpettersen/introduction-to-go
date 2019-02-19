@@ -7,15 +7,15 @@ import (
 
 func main() {
 	var wg sync.WaitGroup
-
-	for i := 0; i < 10; i++ {
+	cats := []string{"Muscat", "Tom", "Mons", ""}
+	for _, catName := range cats {
 		wg.Add(1)
-		go meow(i, &wg)
+		go meow(catName, &wg)
 	}
 	wg.Wait()
 }
 
-func meow(catNum int, wg *sync.WaitGroup) {
-	fmt.Printf("Cat #%d says: Meow!!\n", catNum)
+func meow(catName string, wg *sync.WaitGroup) {
+	fmt.Printf("%s: Meow!!\n", catName)
 	wg.Done()
 }
