@@ -1,25 +1,42 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-type Cat struct {
-	Name   string
-	Age    int
-	Catnip bool
+	"github.com/pkg/errors"
+)
+
+type Mouse struct {
+	Name  string
+	Age   int
+	Hates string
 }
 
-func (c Cat) LovesCatnip() bool {
-	return c.Catnip
+func (m Mouse) IsHating(name string) (bool, error) {
+	if name == "" {
+		return false, errors.New("Error: name cannot be empty")
+	}
+	return m.Hates != name, nil
 }
 
 func main() {
-	c := Cat{
-		Name:   "Muscat",
-		Age:    3,
-		Catnip: true,
+	m := Mouse{
+		Name:  "Jerry",
+		Age:   3,
+		Hates: "Tom",
 	}
 
-	if c.LovesCatnip() {
-		fmt.Printf("Party time for %s\n", c.Name)
+	// Will this end in an error?
+	_, err := m.IsHating("")
+	if err != nil {
+		fmt.Println(err)
 	}
+
+	// Hate gone strong
+	hate, err := m.IsHating("Tom")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Printf("%s hates Tom: %t", m.Name, hate)
 }
