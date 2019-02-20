@@ -12,8 +12,8 @@ func main() {
 	box := tm.NewBox(60|tm.PCT, 20, 0)
 
 	str := `
-Go Meetup
-https://www.meetup.com/Go-Oslo-User-Group/
+Go Meetup @vipps 🧡
+https://www.meetup.com/Go-Oslo-User-Group/events/259120439/
 
 Golang Slack Group
 Join #norway
