@@ -7,6 +7,7 @@ const cat = "cat"
 func main() {
 	var name string
 	name = "Muscat"
+
 	age := 3
 	species := cat
 
