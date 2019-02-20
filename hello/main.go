@@ -14,6 +14,7 @@ func main() {
 
 	// Infer the type of the variable with :=
 	age := 3
+
 	species := cat
 
 	// %s means string

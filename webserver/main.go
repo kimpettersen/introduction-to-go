@@ -6,12 +6,12 @@ import (
 	"log"
 	"net/http"
 
-	catservice "github.com/kimpettersen/introduction-to-go/cmd/webserver/pkg/cat"
+	catservice "github.com/kimpettersen/introduction-to-go/webserver/pkg/cat"
 )
 
 func main() {
 	// Use the catservice package to create a new cat
-	catHandler := func(w http.ResponseWriter, req *http.Request) {
+	catHandler := func(w http.ResponseWriter, _ *http.Request) {
 		cat := catservice.New()
 
 		// Return the cat
