@@ -16,12 +16,6 @@ func TestHate(t *testing.T) {
 		Hates: hated,
 	}
 
-	// Will this end in an error?
-	_, err := m.IsHating("")
-	if err == nil {
-		t.Error("Mice cannot hate empty name")
-	}
-
 	// Hate gone strong
 	hate, err := m.IsHating(hated)
 	if err != nil {
