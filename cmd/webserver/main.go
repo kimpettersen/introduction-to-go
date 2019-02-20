@@ -1,17 +1,24 @@
 package main
 
 import (
+	"fmt"
 	"io"
 	"log"
 	"net/http"
+
+	catservice "github.com/kimpettersen/introduction-to-go/cmd/webserver/pkg/cat"
 )
 
 func main() {
+	// Use the catservice package to create a new cat
+	catHandler := func(w http.ResponseWriter, req *http.Request) {
+		cat := catservice.New()
 
-	helloHandler := func(w http.ResponseWriter, req *http.Request) {
-		io.WriteString(w, "Hello, world!\n")
+		// Return the cat
+		io.WriteString(w, fmt.Sprintf("%s is %d years old", cat.Name, cat.Age))
 	}
 
-	http.HandleFunc("/hello", helloHandler)
-	log.Fatal(http.ListenAndServe(":8081", nil))
+	http.HandleFunc("/cat", catHandler)
+	fmt.Println("Cat can be found on: http://localhost:8080/cat")
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }

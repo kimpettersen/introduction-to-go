@@ -19,7 +19,10 @@ Golang Slack Group
 Join #norway
 https://invite.slack.golangbridge.org/
 
-If you want to give a talk or help organizing
+Code used in this presentation
+https://github.com/kimpettersen/introduction-to-go
+
+If you want to give a talk at a meetup or have questions about anything
 e-mail: %s
 `
 	email := flag.String("email", "", "Email address passed in as flag so it's not checked in on Github")

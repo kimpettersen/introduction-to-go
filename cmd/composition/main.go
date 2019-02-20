@@ -17,22 +17,28 @@ func (a Animal) Speak() {
 }
 
 type Cat struct {
+	// Go does not support inheritance
+	// You can Compose a struct out of other structs. Here we say that a Cat is an Animal
 	Animal
-	Catnip bool
+
+	CatnipLover bool
 }
 
 func (c Cat) LovesCatnip() bool {
-	return c.Catnip
+	return c.CatnipLover
 }
 
 func main() {
 	c := new(Cat)
 	c.Name = "Muscat"
 	c.Age = 3
-	c.Catnip = true
+	c.CatnipLover = true
 	c.Says = "Meowwwww!"
+
+	// Since Cat is an Animal, we can access the speak method
 	c.Speak()
 
+	// And, of course, the LovesCatnip method
 	if c.LovesCatnip() {
 		fmt.Printf("Party time for %s\n", c.Name)
 	}

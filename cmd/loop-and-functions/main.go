@@ -8,6 +8,7 @@ import (
 
 func main() {
 	cats := []string{"Muscat", "Hopper", "Garfield", "Nop", "Mittens", "Stallman", "Snowball", "Queen Elizabeth", "Linus"}
+	// range return two values when iterating a slice index and value
 	for _, catName := range cats {
 		meow(catName)
 	}

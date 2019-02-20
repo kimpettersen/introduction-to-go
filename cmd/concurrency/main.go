@@ -10,6 +10,7 @@ import (
 func main() {
 	var wg sync.WaitGroup
 	cats := []string{"Muscat", "Hopper", "Garfield", "Nop", "Mittens", "Stallman", "Snowball", "Queen Elizabeth", "Linus"}
+
 	for _, catName := range cats {
 		wg.Add(1)
 		go meow(catName, &wg)
