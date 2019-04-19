@@ -2,6 +2,7 @@
 A few simple go programs used in introduction to go.
 
 # Setting up an environment
+Go: https://golang.org/doc/install
 
 You can use Goland if you prefer. If you're looking for a free environment I'd recomend Visual Studio Code. It's fast, simple and has great Go support.
 
