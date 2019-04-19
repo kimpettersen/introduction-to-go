@@ -38,5 +38,5 @@ func main() {
 		fmt.Println(err)
 	}
 
-	fmt.Printf("%s hates Tom: %t", m.Name, hate)
+	fmt.Printf("%s hates Tom: %t\n", m.Name, hate)
 }
